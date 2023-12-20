@@ -1,0 +1,81 @@
+.signedInStudent {
+  float: right;
+  width: 75vw;
+  height: 100vh;
+  
+}
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin:auto;
+  margin-top:2rem;
+  border: 1px solid #ffffff;
+  
+}
+
+th,
+td {
+  padding: 8px;
+  font-weight: 400;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  border-bottom: .2px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #F4F4F4;
+  border-radius: 5px;
+ 
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+.lightGrey{
+    opacity: .6;
+}
+
+.signoutButton{
+    color: #F4F4F4;
+    font-weight: 400;
+    background-color: #562B99;
+    border-radius: 5px;
+    border:0px;
+    padding: .4rem 1.5rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+tr > td > button:hover{
+  cursor: pointer;
+}
+.SignOutButtonContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.yellowButton{
+  color: #010101;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  
+  border:none;
+  border-radius: 5px;
+  background-color: #FBE500;
+
+  padding: .6rem;
+  margin-top: 3rem;
+  margin-inline: 9rem;
+  
+  width: 12rem;
+  
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}

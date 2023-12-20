@@ -1,0 +1,50 @@
+.customNav{
+    /* margin: 1.3rem 2rem; */
+    margin-left: 2.5rem;
+    margin-right: 1rem;
+    height: 13vh;
+    width:auto;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.GCULogoImage{
+    width: 7rem;
+    object-fit: contain;
+}
+
+.left{
+    flex:1;
+    
+}
+.right{
+    display: flex;
+}
+
+.LinkDashBoard{
+    color: #010101;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    
+    border-radius: 5px;
+    background-color: #FBE500;
+    padding: .6rem 1.3rem;
+    margin: 0rem 1.2rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.LinkRegister{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    border-radius: 5px;
+    background: #562B99;
+    padding: .6rem 2rem;
+    margin: 0rem 1.2rem;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
