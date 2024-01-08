@@ -15,8 +15,8 @@ export default function Landing(){
             const response = await axios.post(`http://localhost:5000/signinTracker/${input}`);
             console.log(response.data);
                 
-        if (response.data === "You are already SignIn!!") {
-            new Toast("You are already signed in!!", Toast.TYPE_ERROR, Toast.TIME_NORMAL);
+        if (response.data === "You are Sign out!!") {
+            new Toast("You are Sign out!!", Toast.TYPE_INFO, Toast.TIME_NORMAL);
         } else if (response.data === "you are not register yet") {
             new Toast("You are not registered yet", Toast.TYPE_ERROR, Toast.TIME_NORMAL);
         } else if(Object.keys(response.data).length !== 0) {
@@ -42,7 +42,7 @@ export default function Landing(){
             <div className="centerPieces">
                 <img className="customeLOPE" src={GCU_LOPE} alt="Lopelogo"></img>
                 <h3 className="engineeringShop">Engeering Shop</h3>
-                <input id="text" className="studentIdInput" type="text" placeholder="student ID" onChange={(e)=>{setInput(e.target.value)}}></input>
+                <input id="text" className="studentIdInput" autoComplete="off" type="text" placeholder="student ID" onChange={(e)=>{setInput(e.target.value)}}></input>
                 
             </div>
             <div className="circle" style={{bottom: '-19%', right: '-11%', backgroundColor: '#562B99'}}></div>

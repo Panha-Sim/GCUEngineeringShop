@@ -26,11 +26,11 @@ async function saveStudent(req,res,next){
     }
 
     if(!(await studentWorkerModel.findOne({studentID: payload.workerID}))){
-        return res.json("Invalid Student Worker ID").status(403);
+        return res.status(400).json("Invalid Student Worker ID");
     }
     
     if(await studentModel.findOne({studentID: newStudent.studentID})){
-        return res.json("Student with your ID already Exist").status(400);
+        return res.status(400).json("Student with your ID already Exist");
     }
 
     const savedStudent = new studentModel(newStudent);

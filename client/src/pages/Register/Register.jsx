@@ -21,6 +21,7 @@ export default function Register() {
     const [lastName, setLastName] = useState('');
     const [studentID, setStudentID] = useState('');
     const [workerID, setWorkerID] = useState('');
+    const [errors, setErrors] = useState({});
 
     const url = "http://localhost:5000"
 
@@ -31,12 +32,19 @@ export default function Register() {
             studentID,
             workerID
         }
-        const response = await axios.post(`${url}/student/`,payload);
-        if(response.data === "Student with your ID already Exist"){
-            // return new Toast("Student wiht your ID is already registered",Toast.TYPE_ERROR, Toast.TIME_NORMAL);
-            return ;
+        // const response = await axios.post(`${url}/student/`,payload);
+        // if(response.data === "Student with your ID already Exist"){
+        //     // return new Toast("Student with your ID is already registered",Toast.TYPE_ERROR, Toast.TIME_NORMAL);
+            
+        //     return ;
+        // }
+        try{
+        const response = await axios.post(`${url}/student/`, payload);
+        console.log(response.data.json);
+        }catch(err){
+            //console.log(err)
         }
-        return navigate('/');
+        //return navigate('/');
     }
 
     return (
@@ -48,6 +56,7 @@ export default function Register() {
                     <label>First Name:</label>
                     <input
                         id="FirstName"
+                        autoComplete="off"
                         type="text"
                         placeholder="First Name"
                         value={firstName}
@@ -58,6 +67,7 @@ export default function Register() {
                     <label>Last Name:</label>
                     <input
                         id="LastName"
+                        autoComplete="off"
                         type="text"
                         placeholder="Last Name"
                         value={lastName}
@@ -87,7 +97,7 @@ export default function Register() {
                     onChange={(e) => setWorkerID(e.target.value)}
                 />
             </div>
-
+            {errors.serverError && <p className="error">{errors.serverError}</p>}
             <button className="bigPurpleButton" type="submit">Register</button>
         </form>
     );

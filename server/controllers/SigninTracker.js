@@ -12,9 +12,11 @@ async function signIn(req,res,next){
 
     // See if student is signIn
     if(await SigninTrackerModel.findOne({studentID})) {
-        return res.json("You are already SignIn!!")
+        await SigninTrackerModel.findOneAndDelete({studentID});
+        return res.json("You are Sign out!!")
     }
-    //Check if student is sign in
+
+    //Check if student is registered    
     const student = await studentModel.findOne({studentID});
 
     if(student){   
